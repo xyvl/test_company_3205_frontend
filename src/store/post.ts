@@ -1,19 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getPost = createAsyncThunk("post/getPost", async () => {
-  const data: IPost = { post: { email: "ddddd", number: "fff" } };
-  return data.post
+  const data: IPost = { email: "ddddd", number: "fff" } ;
+  return data
 });
 
 interface IPost {
-  post: {
     email: string;
     number: string;
-  };
 }
 
-interface IInitialState extends IPost {
+interface IInitialState {
   state: "loading" | "finish" | "rejected" | "";
+  post: IPost
 }
 
 const initialState: IInitialState = {
