@@ -1,0 +1,84 @@
+@keyframes loading {
+	0%{
+		transform: rotate(0);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background: #000;
+	
+}
+.wrapper{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+input{
+	width: 40%;
+	margin-top: 20px;
+	padding: 15px 10px;
+	font-size: 1.5rem;
+	border-radius: 10px;
+	border: none;
+	&:focus-visible{
+		outline: 2px solid #0295c2;
+	}
+}
+input[type="submit"]{
+	border:none;
+	cursor: pointer;
+	color: white;
+	background: #0295c2;
+	transition: all .2s;
+	&:hover{
+		box-shadow: 0 0 5px white;
+	}
+}
+.check_error{
+	color: red;
+	font-size: 1.2em;
+	margin-top: 10px;
+}
+.no_submit{
+	opacity: .5;
+	cursor: not-allowed;
+}
+.block{
+	width: 40%;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	.circle{
+		width: 80px;
+		height: 80px;
+		background: transparent;
+		border-radius: 100%;
+		border: 10px solid white;
+		border-right: 10px solid red;
+		animation: loading .8s infinite linear;
+	}
+	.error_result{
+		color: red;
+		font-size: 1.5em;
+	}
+	.ok_result{
+		color: white;
+		font-size: 1.5em;
+	}
+}
